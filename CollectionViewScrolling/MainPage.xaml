@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewScrolling.MainPage">
+     <RefreshView IsRefreshing="{Binding IsLoading}" Command="{Binding RefreshCommand}" Margin="16">
+            <CollectionView ItemsSource="{Binding Items}" Footer="{Binding}" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding}" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.FooterTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Button Text="Load More" Clicked="Button_Clicked" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.FooterTemplate>
+          </CollectionView>   
+    </RefreshView>
+</ContentPage>
